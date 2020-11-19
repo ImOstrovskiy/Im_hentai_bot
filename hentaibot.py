@@ -23,7 +23,7 @@ def get_text_messages(message):
  chat_id = int(message.chat.id)
  text = message.text
  
- if message.text == u'/wallpaper':
+ if message.text == u'/hentai':
       url = 'https://nekos.life/api/v2/img/lewd'
       r = requests.get(url, allow_redirects=True)
       r.headers
