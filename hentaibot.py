@@ -14,7 +14,9 @@ bot = TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def handle_grammar2(m):
-    bot.send_message(m.from_user.id, f"<b>Добро пожаловать, {m.from_user.first_name}</b>", parse_mode='HTML', disable_notification=True)
+    markup = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
+    markup.row('Хентай🤤')
+    bot.send_message(m.from_user.id, f"<b>Добро пожаловать, {m.from_user.first_name}</b>", parse_mode='HTML', disable_notification=True, reply_markup=markup)
     sleep(0.01)
 
 
@@ -23,7 +25,7 @@ def get_text_messages(message):
  chat_id = int(message.chat.id)
  text = message.text
  
- if message.text == u'/hentai':
+if message.text == u'Хентай🤤':
       url = 'https://nekos.life/api/v2/img/lewd'
       r = requests.get(url, allow_redirects=True)
       r.headers
